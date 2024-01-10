@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ff4d4d; /* Pretty red color */
+    background-color: #33FFE6; /* Pretty red color */
     font-family: Arial, sans-serif;
     overflow: hidden; /* Prevents scrollbars */
 }
@@ -67,13 +67,13 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-20px) scale(1.05); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); } /* Reduced movement for a subtle effect */
 }
 
 @keyframes sway {
     0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(3deg); } /* Gentle sway for a natural look */
+    50% { transform: rotate(2deg); } /* Reduced sway angle */
 }
 
 /* Gradient colors for balloons */
