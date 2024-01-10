@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #68FF33; /* Pretty red color */
+    background-color: #ff4d4d; /* Pretty red color */
     font-family: Arial, sans-serif;
     overflow: hidden; /* Prevents scrollbars */
 }
@@ -54,6 +54,16 @@ body {
         width: 8vw; /* Larger size on smaller screens */
         height: 11vw;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    .balloon {
+        /* Adjust balloon sizes for mobile screens */
+        width: 8vw;
+        height: 12vw;
+    }
+
+    /* Additional mobile-specific styles */
 }
 
 @keyframes float {
