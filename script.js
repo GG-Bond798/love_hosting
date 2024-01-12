@@ -10,15 +10,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const balloon = document.createElement('div');
         balloon.classList.add('balloon', randomColorClass());
 
-        let xPos = Math.floor(Math.random() * window.innerWidth);
+        let xPos = Math.floor(Math.random() * (window.innerWidth - 120));
         balloon.style.left = xPos + 'px';
         balloon.style.bottom = '-200px';
         balloonContainer.appendChild(balloon);
 
-        // Reduced movement characteristics for each balloon
-        let amplitude = Math.random() * 1.3; // Reduced max horizontal movement range
-        let frequency = Math.random() * 0.001; // Slightly adjusted oscillation frequency
-        let verticalSpeed = 0.1 + Math.random() * 0.005; // Slightly slower vertical speed
+        let verticalSpeed = 0.1 + Math.random() * 0.005;
+        let swayAmount = Math.random() * 1.1; // Slight sway
+        let swayFrequency = Math.random() * 0.0025; // Slow sway
 
         let lastTime;
         function updatePosition(time) {
@@ -26,10 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
             const deltaTime = time - lastTime;
 
             let verticalMovement = deltaTime * verticalSpeed;
-            let horizontalMovement = Math.sin(time * frequency) * amplitude;
+            let horizontalMovement = Math.sin(time * swayFrequency) * swayAmount;
+
+            xPos += horizontalMovement;
+            // Ensure xPos stays within the window bounds
+            xPos = Math.max(0, Math.min(window.innerWidth - balloon.offsetWidth, xPos));
 
             let yPos = parseFloat(balloon.style.bottom) + verticalMovement;
-            xPos += horizontalMovement;
 
             if (yPos < window.innerHeight + 100) {
                 balloon.style.bottom = yPos + 'px';
