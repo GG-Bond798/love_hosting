@@ -1,7 +1,7 @@
 body { 
     margin: 0; 
     padding: 0;
-    background-color: #ff4d4d; 
+    background-color: #ff4d4d;
     text-align: center; 
     overflow: hidden;
 }
@@ -80,3 +80,27 @@ body {
 .balloon.yellow { background: linear-gradient(to top left, #fff720, #ffcf71, #ffffff); }
 .balloon.purple { background: linear-gradient(to top left, #9d50bb, #6e48aa, #ffffff); }
 .balloon.orange { background: linear-gradient(to top left, #ff6a00, #ee0979, #ffffff); }
+
+
+.center-mask {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    background-color: pink;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 20;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.center-mask p {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+}
