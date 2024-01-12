@@ -49,3 +49,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(createBalloon, 400);
 });
+
+// Typing effect
+document.addEventListener("DOMContentLoaded", function() {
+    const phrases = ["小臭猪，爱你哦", "MUA~"];
+    let currentPhrase = 0;
+    let currentLetter = 0;
+    const typingSpeed = 150; // speed in milliseconds
+    const typedTextElement = document.getElementById('typed-text');
+
+    function typeOutText() {
+        if (currentLetter < phrases[currentPhrase].length) {
+            typedTextElement.textContent += phrases[currentPhrase].charAt(currentLetter);
+            currentLetter++;
+            setTimeout(typeOutText, typingSpeed);
+        } else {
+            // Optionally, reset for continuous loop or change text
+            currentPhrase = (currentPhrase + 1) % phrases.length;
+            setTimeout(() => {
+                typedTextElement.textContent = '';
+                currentLetter = 0;
+                typeOutText(); // Start typing next phrase
+            }, 2000); // Wait a bit before starting the next phrase
+        }
+    }
+
+    typeOutText(); // Start typing
+});
