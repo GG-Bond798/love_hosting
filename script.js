@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Typing effect
 document.addEventListener("DOMContentLoaded", function() {
-    const phrases = ["小臭猪，爱你哦", "MUA~"];
+    // const phrases = ["小臭猪，爱你哦", "MUA~"];
+    const phrases = ["Hello, world!"];
     let currentPhrase = 0;
     let currentLetter = 0;
     const typingSpeed = 150; // speed in milliseconds
